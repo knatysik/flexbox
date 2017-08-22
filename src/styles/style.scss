@@ -1,9 +1,45 @@
-@import "bootstrap.scss";
+@import "bootstrap";
 
-$red: red;
-$color: #d00;
+$heading-color: #dc4949;
+$header-bg-color: #ececec;
+$gutter: 15px;
 
-
-body {
-  background-color: $red;
+h1, h3 {
+  color: $heading-color;
 }
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  padding-top: $gutter;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  background-color: $header-bg-color;
+  flex: 0 0 auto;
+  padding: $gutter * 2;
+}
+
+.img {
+  background: salmon url("../images/test.png") no-repeat center;
+  background-size: cover;
+  flex: 1 1 auto;
+  min-height: 200px;
+
+  @include media-breakpoint-down(sm) {
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 50%;
+    }
+  }
+}
+
